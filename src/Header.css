@@ -1,3 +1,13 @@
 .header {
-    border: solid red 2px;
+    padding: 2em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.25rem;
+    letter-spacing: .75px;
 }

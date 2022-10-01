@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './Header.css';
+import logo from './crystal-clear-logo.jpg';
 
 
 export default function Header(props) {
@@ -7,17 +8,17 @@ export default function Header(props) {
         <header className="header">
             <div>
                 <Link>
-                    Logo
+                    <img src={logo} alt="logo"></img>
                 </Link>
             </div>
-            <nav>
-                <Link to='/'>Home</Link>
-                <Link to='/products'>Products</Link>
-                <Link to='/service'>Service</Link>
-                <Link to='/flyer'>Flyer</Link>
-                <Link to='/financing'>Financing</Link>
-                <Link to='/about'>About us</Link>
-                <Link to='/contact'>Contact</Link>
+            <nav className="nav">
+                <Link to='/'><span className="nav__item">Home</span></Link>
+                <Link to='/products'><span className="nav__item">Products</span></Link>
+                <Link to='/service'><span className="nav__item">Service</span></Link>
+                <Link to='/flyer'><span className="nav__item">Flyer</span></Link>
+                <Link to='/financing'><span className="nav__item">Financing</span></Link>
+                <Link to='/about'><span className="nav__item">About us</span></Link>
+                <Link to='/contact'><span className="nav__item">Contact</span></Link>
             </nav>
         </header>
     )
