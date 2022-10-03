@@ -1,8 +1,11 @@
-.header {
-    padding: 2em 2em;
+/* .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo {
+    width: 150px;
 }
 
 .nav {
@@ -10,4 +13,4 @@
     gap: 1rem;
     font-size: 1.25rem;
     letter-spacing: .75px;
-}
+} */

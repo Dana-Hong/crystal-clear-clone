@@ -8,7 +8,7 @@ export default function Header(props) {
         <header className="header">
             <div>
                 <Link>
-                    <img src={logo} alt="logo"></img>
+                    <img className="logo" src={logo} alt="logo"></img>
                 </Link>
             </div>
             <nav className="nav">
