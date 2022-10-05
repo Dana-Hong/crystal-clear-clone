@@ -2,13 +2,10 @@ import formCategories from "./data";
 
 export default function FormElement(props) {
 
-    console.log(Object.entries(formCategories));
-
     const formElements = Object.entries(formCategories).map((category, index) => {
-        // const categoryName = category[0].replace('_', ' ');
         return (
             <div key={index} className="form__checkbox_section">
-                <p className="form__section__name">{category[0]}</p>
+                <p className="form__checkbox__section__name">{category[0]}</p>
                 {category[1].map((option, index) => {
                     return (
                         <div key={index} className='checkbox-component'>
