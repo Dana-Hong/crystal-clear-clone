@@ -71,6 +71,10 @@ code {
   margin-right: 1em;
 }
 
+.nav-open .nav {
+  transform: translateX(0);
+}
+
 .nav-toggle {
   padding: .5em;
   background: transparent;
@@ -111,7 +115,6 @@ code {
 .hamburger::after {
   bottom: 7px; 
 }
-
 
 .nav {
   position: fixed;
@@ -397,7 +400,19 @@ code {
 
 @media (min-width: 1100px) {
   .nav {
-    display: flex;
+    background-color: inherit;
+    position: relative;
+    height: unset;
+    transform: translateX(0);
+  }
+  
+  .nav__list {
+    flex-direction: row;
+    gap: 0;
+  }
+  
+  .nav__item {
+    color: #00539D;
   }
 
   .nav-toggle {
