@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Hero from './Hero';
@@ -11,12 +12,19 @@ import widget3 from './imgs/widget-03.jpg';
 
 
 function App() {
+  const [navOpen, setNavOpen] = useState(false);
+
+  function toggleNav() {
+    // console.log('hey button working');
+    setNavOpen(preNavOpen => !preNavOpen);
+  }
+
   const widgetPaths = [widget1, widget2, widget3];
   const widgetElements = widgetPaths.map((widget, index) => <Widget key={index} path={widget} />)
 
   return (
-    <div className="App">
-        <Header/>
+    <div className={`App ${navOpen ? 'nav-open' : ''}`}>
+        <Header navOpen={navOpen} toggleNav={toggleNav}/>
         <Hero/>
         <About/>
         <div className='products-services'>
