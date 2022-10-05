@@ -4,10 +4,10 @@ export default function FormElement(props) {
 
     console.log(Object.entries(formCategories));
 
-    const formElements = Object.entries(formCategories).map(category => {
+    const formElements = Object.entries(formCategories).map((category, index) => {
         // const categoryName = category[0].replace('_', ' ');
         return (
-            <div className="form__checkbox_section">
+            <div key={index} className="form__checkbox_section">
                 <p className="form__section__name">{category[0]}</p>
                 {category[1].map((option, index) => {
                     return (
@@ -23,7 +23,7 @@ export default function FormElement(props) {
     
     return (
         <form action='#' method='post' className="form">
-            <div className="form__section">
+            <div className="form__section inquiry-details">
                 {formElements}
             </div>
             <div className="form__section customer-info">
@@ -46,6 +46,10 @@ export default function FormElement(props) {
                 <div className="customer__info_option">
                     <label className='form__option_label' htmlFor='phone'>Phone:</label>
                     <input className='text-option' id='phone' name='phone' type='tel'></input>
+                </div>
+                <div className='checkbox-component'>
+                    <input type='checkbox' id='returning-customer' name='returning-customer' className='checkbox'></input>
+                    <label htmlFor='returning-customer' className='form__option_label'>I am a returning customer</label>
                 </div>
             </div>
             <button className='form-submit-btn' type='submit'>Get pricing now</button>

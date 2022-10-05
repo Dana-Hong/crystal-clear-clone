@@ -19,7 +19,13 @@ function App() {
         <Header/>
         <Hero/>
         <About/>
-        {widgetElements}
+        <div className='products-services'>
+          <h1 className='products-services__title'>Choose from a variety of products and services</h1>
+          <div className='products-services-widgets'>
+            {widgetElements}
+          </div>
+        </div>
+        <h1 className='form-title'>Get a quick quote</h1>
         <FormElement />
         <Footer />
     </div>

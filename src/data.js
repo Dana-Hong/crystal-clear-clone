@@ -15,9 +15,6 @@ const formCategories = {
         'City',
         'Well'
     ],
-    "": [
-        'I am a returning customer'
-    ]
 }
 
 export default formCategories;
