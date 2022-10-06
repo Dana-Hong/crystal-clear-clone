@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import Header from './Header';
-import Hero from './Hero';
-import About from './About';
-import Widget from './Widget';
-import FormElement from './Form';
-import Footer from './Footer';
-import widget1 from './imgs/widget-01.jpg';
-import widget2 from './imgs/widget-02.jpg';
-import widget3 from './imgs/widget-03.jpg';
+import Header from '../shared/components/Header';
+import Hero from '../home/components/Hero';
+import About from '../home/components/About';
+import Widget from '../home/components/Widget';
+import FormElement from '../home/components/Form';
+import Footer from '../shared/components/Footer';
+import widget1 from '../home/imgs/widget-01.jpg';
+import widget2 from '../home/imgs/widget-02.jpg';
+import widget3 from '../home/imgs/widget-03.jpg';
 
 
 function App() {

@@ -1,4 +1,4 @@
-import './Hero.css'
+import '../styles/Hero.css'
 
 export default function Hero(props) {
     return (

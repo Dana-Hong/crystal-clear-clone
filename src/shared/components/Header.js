@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import './Header.css';
-import logo from './crystal-clear-logo.jpg';
+import '../styles/Header.css';
+import logo from '../imgs/crystal-clear-logo.jpg';
 
 
 export default function Header(props) {

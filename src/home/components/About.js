@@ -1,5 +1,5 @@
-import './About.css';
-import aboutImage from './about-01.jpg';
+import '../styles/About.css';
+import aboutImage from '../imgs/about-01.jpg';
 
 export default function About(props) {
     return (

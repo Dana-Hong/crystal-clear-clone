@@ -1,4 +1,4 @@
-import formCategories from "./data";
+import formCategories from "../../app/data";
 
 export default function FormElement(props) {
 

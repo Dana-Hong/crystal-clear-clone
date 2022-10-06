@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import award1 from './imgs/award-01.png';
-import award2 from './imgs/award-02.png';
-import award3 from './imgs/award-03.png';
+import award1 from '../imgs/award-01.png';
+import award2 from '../imgs/award-02.png';
+import award3 from '../imgs/award-03.png';
 
-import './Footer.css';
+import '../styles/Footer.css';
 
 export default function Footer(props) {
     const awardPaths = [award1, award2, award3];
