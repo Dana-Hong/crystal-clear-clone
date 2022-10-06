@@ -71,19 +71,6 @@ code {
   margin-right: 1em;
 }
 
-.nav-open .nav {
-  transform: translateX(0);
-}
-
-.nav-toggle {
-  padding: .5em;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  position: absolute;
-  right: 1em;
-  z-index: 100;
-}
 
 .hamburger {
   position: relative;
@@ -99,7 +86,7 @@ code {
   width: 1.9em;
   height: 3px;
   transition: transform 250ms ease-in-out;
-
+  
 }
 
 .hamburger::before,
@@ -126,6 +113,36 @@ code {
   z-index: 50;
   transform: translateX(100%);
   transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-toggle {
+  padding: .5em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  z-index: 100;
+}
+
+.nav-open .nav {
+  transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+  position: fixed;
+}
+
+.nav-open .hamburger {
+  transform: translateY(-7px) rotate(45deg) ;
+}
+
+.nav-open .hamburger::before {
+  visibility: hidden;
+}
+
+.nav-open .hamburger::after {
+  transform: translateY(7px) rotate(90deg);
 }
 
 .nav__list {
@@ -404,6 +421,7 @@ code {
     position: relative;
     height: unset;
     transform: translateX(0);
+    transition: transform 400ms cubic-bezier(.5, 0, .5, 1);
   }
   
   .nav__list {
