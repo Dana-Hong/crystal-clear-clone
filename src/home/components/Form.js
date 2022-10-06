@@ -1,6 +1,6 @@
-import formCategories from "../../app/data";
+import { formCategories } from "../../app/data";
 
-export default function FormElement(props) {
+export default function Form(props) {
 
     const formElements = Object.entries(formCategories).map((category, index) => {
         return (
@@ -19,37 +19,40 @@ export default function FormElement(props) {
     });
     
     return (
-        <form action='#' method='post' className="form">
-            <div className="form__section inquiry-details">
-                {formElements}
-            </div>
-            <div className="form__section customer-info">
-                <div className="customer__info_option">
-                    <label className='form__option_label' htmlFor='firstName'>First name:</label>
-                    <input className='text-option' id='firstName' name='firstName' type='text'></input>
+        <section>
+            <h1 className='form-title'>Get a quick quote</h1>
+            <form action='#' method='post' className="form">
+                <div className="form__section inquiry-details">
+                    {formElements}
                 </div>
-                <div className="customer__info_option">
-                    <label className='form__option_label' htmlFor='lastName'>Last name:</label>
-                    <input className='text-option' id='lastName' name='lastName' type='text'></input>
+                <div className="form__section customer-info">
+                    <div className="customer__info_option">
+                        <label className='form__option_label' htmlFor='firstName'>First name:</label>
+                        <input className='text-option' id='firstName' name='firstName' type='text'></input>
+                    </div>
+                    <div className="customer__info_option">
+                        <label className='form__option_label' htmlFor='lastName'>Last name:</label>
+                        <input className='text-option' id='lastName' name='lastName' type='text'></input>
+                    </div>
+                    <div className="customer__info_option">
+                        <label className='form__option_label' htmlFor="postalCode">Postal Code:</label>
+                        <input className='text-option' id='postalCode' name='postalCode' type='text'></input>
+                    </div>
+                    <div className="customer__info_option">
+                        <label className='form__option_label' htmlFor='email'>E-mail:</label>
+                        <input className='text-option' id='email' name='email' type='email'></input>
+                    </div>
+                    <div className="customer__info_option">
+                        <label className='form__option_label' htmlFor='phone'>Phone:</label>
+                        <input className='text-option' id='phone' name='phone' type='tel'></input>
+                    </div>
+                    <div className='checkbox-component'>
+                        <input type='checkbox' id='returning-customer' name='returning-customer' className='checkbox'></input>
+                        <label htmlFor='returning-customer' className='form__option_label'>I am a returning customer</label>
+                    </div>
                 </div>
-                <div className="customer__info_option">
-                    <label className='form__option_label' htmlFor="postalCode">Postal Code:</label>
-                    <input className='text-option' id='postalCode' name='postalCode' type='text'></input>
-                </div>
-                <div className="customer__info_option">
-                    <label className='form__option_label' htmlFor='email'>E-mail:</label>
-                    <input className='text-option' id='email' name='email' type='email'></input>
-                </div>
-                <div className="customer__info_option">
-                    <label className='form__option_label' htmlFor='phone'>Phone:</label>
-                    <input className='text-option' id='phone' name='phone' type='tel'></input>
-                </div>
-                <div className='checkbox-component'>
-                    <input type='checkbox' id='returning-customer' name='returning-customer' className='checkbox'></input>
-                    <label htmlFor='returning-customer' className='form__option_label'>I am a returning customer</label>
-                </div>
-            </div>
-            <button className='form-submit-btn' type='submit'>Get pricing now</button>
-        </form>
+                <button className='btn' type='submit'>Get pricing now</button>
+            </form>
+        </section>
     )
 }

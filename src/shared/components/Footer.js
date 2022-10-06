@@ -10,7 +10,7 @@ export default function Footer(props) {
     const awardElements = awardPaths.map((awardpath, index) => <img key={index} className='footer__img' src={awardpath} alt='award'></img>)
 
     return (
-        <footer>
+        <footer className='footer'>
             <div className='footer__imgs'>
                 {awardElements}
             </div>

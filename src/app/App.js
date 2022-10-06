@@ -1,14 +1,14 @@
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from '../shared/components/Header';
-import Hero from '../home/components/Hero';
-import About from '../home/components/About';
-import Widget from '../home/components/Widget';
-import FormElement from '../home/components/Form';
+// import Hero from '../home/components/Hero';
+// import About from '../home/components/About';
+// import ProductsAndServices from '../home/components/ProductsAndServices';
+// import Form from '../home/components/Form';
+import Home from '../home/components/Home';
+import Service from '../service/components/Service';
 import Footer from '../shared/components/Footer';
-import widget1 from '../home/imgs/widget-01.jpg';
-import widget2 from '../home/imgs/widget-02.jpg';
-import widget3 from '../home/imgs/widget-03.jpg';
 
 
 function App() {
@@ -19,22 +19,35 @@ function App() {
     setNavOpen(preNavOpen => !preNavOpen);
   }
 
-  const widgetPaths = [widget1, widget2, widget3];
-  const widgetElements = widgetPaths.map((widget, index) => <Widget key={index} path={widget} />)
-
   return (
     <div className={`App ${navOpen ? 'nav-open' : ''}`}>
         <Header navOpen={navOpen} toggleNav={toggleNav}/>
-        <Hero/>
-        <About/>
-        <div className='products-services'>
-          <h1 className='products-services__title'>Choose from a variety of products and services</h1>
-          <div className='products-services-widgets'>
-            {widgetElements}
-          </div>
-        </div>
-        <h1 className='form-title'>Get a quick quote</h1>
-        <FormElement />
+        <Routes>
+          <Route 
+            path='/' 
+            element={<Home />}
+          />
+          <Route 
+            path='/service'
+            element={<Service />}
+          />
+          <Route
+            path='/flyer'
+            element={''}
+          />
+          <Route
+            path='/financing'
+            element={''}
+          />
+          <Route
+            path='/about_us'
+            element={''}
+          />
+          <Route
+            path='/contact'
+            element={''}
+          />
+        </Routes>
         <Footer />
     </div>
   );

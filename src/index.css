@@ -188,8 +188,8 @@ code {
 
 /* HERO */
 
-.hero {
-  background-image: url('./home/imgs/hero_cover.jpg');
+.hero__home {
+  /* background-image: url('./home/imgs/hero_cover.jpg'); */
   background-size: cover;
   background-position: center;
   background-color: rgb(90, 90, 90);
@@ -200,7 +200,7 @@ code {
   align-items: center;
 }
 
-.hero__text {
+.hero__home__text {
   text-align: center;
   color: aliceblue;
   font-size: 1.5rem;
@@ -241,6 +241,32 @@ code {
   padding: 1em;
 }
 
+.table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-radius: 3px;
+  border: solid black 2px;
+}
+
+.table-header {
+  border-bottom: solid black 2px;
+  font-weight: normal;
+  font-size: 1.5rem;
+  color: whitesmoke;
+  background-color: #00539D;
+  padding: 1em;
+}
+
+.table-cell {
+  color: black;
+  border: solid black 1px;
+  padding: .7em;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
 /* PRODUCTS & SERVICES */
 
 .products-services {
@@ -275,6 +301,7 @@ code {
   transform: scale(1.05);
   filter: brightness(50%);
 }
+
 
 /* FORM */
 
@@ -354,7 +381,15 @@ code {
   /* border: solid pink 2px; */
 }
 
-.form-submit-btn {
+.btn-container {
+  max-width: 1600px;
+  margin: 2em auto;
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+}
+
+.btn {
   font-family: 'Assistant', 'Sans serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
@@ -372,10 +407,14 @@ code {
   transition: transform 250ms;
 }
 
-.form-submit-btn:hover,
-.form-submit-btn:focus {
+.btn:hover,
+.btn:focus {
   transform: scale(1.1);
   background-color: #D11547;
+}
+
+.btn-container .btn {
+  margin: 0;
 }
 
 @media (min-width: 650px) {
@@ -445,7 +484,7 @@ code {
   }
 
   .about__body_container {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -456,6 +495,12 @@ code {
 }
 
 /* FOOTER */
+
+.footer {
+  margin-top: 10em;
+  background-color: #00539D;
+  padding: 2em;
+}
 
 .footer__imgs {
   display: flex;
