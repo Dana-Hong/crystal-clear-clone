@@ -7,8 +7,16 @@ import Header from '../shared/components/Header';
 // import ProductsAndServices from '../home/components/ProductsAndServices';
 // import Form from '../home/components/Form';
 import Home from '../home/components/Home';
+import ProductsMain from '../products/components/ProductsMain';
+import Products from '../products/components/Products';
 import Service from '../service/components/Service';
+import AboutUs from '../about_us/AboutUs';
 import Footer from '../shared/components/Footer';
+import { products } from './data';
+import economy from '../products/economy/crystal-comfort.JPG';
+import highEfficiency from '../products/high-efficiency/imgs';
+import superEfficient from '../products/super-efficient/imgs';
+import ProductCategories from '../products/components/ProductCategories';
 
 
 function App() {
@@ -28,6 +36,10 @@ function App() {
             element={<Home />}
           />
           <Route 
+            path='/products'
+            element={<ProductsMain />}
+          />
+          <Route 
             path='/service'
             element={<Service />}
           />
@@ -40,12 +52,20 @@ function App() {
             element={''}
           />
           <Route
-            path='/about_us'
-            element={''}
+            path='/about'
+            element={<AboutUs />}
           />
           <Route
             path='/contact'
             element={''}
+          />
+          <Route
+            path='/products/water-softeners'
+            element={<ProductCategories imgs={[economy, highEfficiency, superEfficient]} />}
+           />
+          <Route
+            path='/products/saltless-water-alternatives'
+            element={<ProductCategories imgs={''} />}
           />
         </Routes>
         <Footer />
