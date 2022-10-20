@@ -39,7 +39,13 @@ code {
   height: 75%;
 }
 
+.test {
+  text-shadow: 3px 3px 1px rgb(211, 211, 211);
+
+}
+
 .easy {
+  /* text-shadow: 3px 3px 1px rgb(211, 211, 211); */
   -webkit-text-fill-color: transparent;
 }
 

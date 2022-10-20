@@ -4,7 +4,9 @@ import Logo from "./Logo";
 export default function Header(props) {
     return (
         <header className="App-header flex max-w-screen-2xl mx-auto">
-            <Logo />
+            <Link to='/'>
+                <Logo />
+            </Link>
             <div className="burger">burger</div>
             <nav>
                 <menu className="flex">
@@ -13,15 +15,21 @@ export default function Header(props) {
                             Products
                         </Link>
                     </li>
-                    <Link to='/service'>
-                        <li>Service</li>
-                    </Link>
-                    <Link to='/About'>
-                        <li>About</li>
-                    </Link>
-                    <Link to='/Contact'>
-                        <li>Contact</li>
-                    </Link>
+                    <li>
+                        <Link to='/service'>
+                            Service
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/about'>
+                            About
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/contact'>
+                            Contact
+                        </Link>
+                    </li>
                 </menu>
             </nav>
         </header>

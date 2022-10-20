@@ -3,7 +3,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'kitchen': "url('../src/imgs/kitchen-christian-mackie-unsplash.jpg')",
+      }
+    },
     screens: {
       '2xs': '320px',
       'xs' :'500px',
