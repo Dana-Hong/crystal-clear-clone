@@ -6,6 +6,13 @@ module.exports = {
     extend: {
       backgroundImage: {
         'kitchen': "url('../src/imgs/kitchen-christian-mackie-unsplash.jpg')",
+        'crystalClassic': "url('..src/imgs/crystal-classic.JPG')",
+        'crystalComfort': "url('..src/imgs/crystal-comfort.JPG')",
+        'crystalMaxx': "url('..src/imgs/crystal-maxx.JPG')",
+        'crystalPerform': "url('..src/imgs/crystal-perform.JPG')",
+        'crystalPro': "url('..src/imgs/crystal-pro.JPG')",
+        'crystalUltra': "url('..src/imgs/crystal-ultra.JPG')",
+        'crystalVision': "url('..src/imgs/crystal-vision.JPG')",
       }
     },
     screens: {
