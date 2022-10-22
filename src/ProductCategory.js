@@ -13,7 +13,7 @@ export default function ProductCategory(props) {
         return <ListItem key={nanoid()} title={listItem.title} body={listItem.body} />
     });
 
-    const productWidgetElements = waterSoftenerData.models.map(model => <ProductWidget key={nanoid()} img={model.img} />);
+    const productWidgetElements = waterSoftenerData.models.map(model => <ProductWidget key={nanoid()} img={model.img} name={model.name} path={model.path} />);
 
     return (
         <section>

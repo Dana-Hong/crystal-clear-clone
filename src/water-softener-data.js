@@ -50,9 +50,10 @@ const waterSoftenerData = {
     models: [
         {   
             name: 'Crystal Comfort Water Softener',
-            price: [1295, '$19 /mo OAC '],
+            regPrice: 1295,
+            financing: '$19 /mo OAC',
             img: crystalComfort,
-            path: 'products/water-softeners/crystalComfort',
+            path: '/products/water-softeners/crystal-comfort',
             features: {
                 valve: '5600 MI Series Control Valve',
                 float: 'Salt Tank Safety Float',
@@ -62,9 +63,10 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal Vision Water Softener',
-            price: [1595, '$23 /mo OAC '],
+            regPrice: 1595,
+            financing: '$23 /mo OAC',
             img: crystalVision,
-            path: 'products/water-softeners/crystalVision',
+            path: '/products/water-softeners/crystal-vision',
             features: {
                 valve: '765 Series Control Valve',
                 float: 'Salt Tank Safety Float',
@@ -74,9 +76,10 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal Perform Water Softener',
-            price: [1895, '$23 /mo OAC '],
+            regPrice: 1895,
+            financing: '$23 /mo OAC',
             img: crystalPerform,
-            path: 'products/water-softeners/crystalPerform',
+            path: '/products/water-softeners/crystal-perform',
             features: {
                 valve: 'Fleck 5600 SXT Controller',
                 float: 'Salt Tank Safety Float',
@@ -86,9 +89,10 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal Ultra High-Efficiency Conditioner',
-            price: [2395, '$23 /mo OAC '],
+            regPrice: 2395,
+            financing: '$23 /mo OAC',
             img: crystalUltra,
-            path: 'products/water-softeners/crystalUltra',
+            path: '/products/water-softeners/crystal-ultra',
             features: {
                 valve: 'Fleck 5800 XTR2 Controller',
                 float: 'Salt Tank Safety Float',
@@ -98,9 +102,10 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal CLASSIC Twin Softener',
-            price: [2895, '$23 /mo OAC '],
+            regPrice: 2895,
+            financing: '$23 /mo OAC',
             img: crystalClassic,
-            path: 'products/water-softeners/crystalClassic',
+            path: '/products/water-softeners/crystal-classic',
             features: {
                 valve: 'Fleck 5800 XTR2 Controller',
                 float: 'Salt Tank Safety Float',
@@ -110,9 +115,10 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal PRO Water Softener',
-            price: [3295, '$23 /mo OAC '],
+            regPrice: 3295,
+            financing: '$23 /mo OAC',
             img: crystalPro,
-            path: 'products/water-softeners/crystalPro',
+            path: '/products/water-softeners/crystal-pro',
             features: {
                 valve: 'Fleck 5800 XTR2 Controller',
                 float: 'Salt Tank Safety Float',
@@ -122,9 +128,10 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal MAXX Water Softener',
-            price: [3595, '$23 /mo OAC '],
+            regPrice: 3595,
+            financing: '$23 /mo OAC',
             img: crystalMaxx,
-            path: 'products/water-softeners/crystalMaxx',
+            path: '/products/water-softeners/crystal-maxx',
             features: {
                 valve: 'Fleck 5800 XTR2 Controller',
                 float: 'Salt Tank Safety Float',
