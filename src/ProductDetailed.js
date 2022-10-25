@@ -1,11 +1,28 @@
+import { useState, useContext } from "react";
+import { CartContext } from "./CartContext";
+import { Link } from "react-router-dom";
 import ListItem from "./ListItem";
-import { Route, Routes } from "react-router-dom";
 
 export default function ProductDetailed(props) {
+    const [quantity, setQuantity] = useState(1);
     const { productData } = props;
+    const cartData = useContext(CartContext);
+    console.log(cartData);
 
     const listElements = Object.values(productData.features).map(feature => <ListItem title={''} body={[feature]} />)
 
+    function handleChange(event) {
+        setQuantity(event.target.value);
+    }
+
+    function buyNow() {
+        if (!cartData.cart.some(item => item.name === productData.name) || quantity > 1 ) {
+            cartData.addItem(productData.name, Number(quantity));
+        }
+    }
+
+    console.log(quantity);
+    
     return (
         <section className="border-black border-4 mb-auto">
             <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 justify-center">
@@ -38,35 +55,45 @@ export default function ProductDetailed(props) {
                                 id='productQuantity'
                                 placeholder="1"
                                 min={1}
+                                onChange={handleChange}
                                 className="
                                 border-2
                                 border-black
                                 w-[75px]
-
                                 "
                             />
                         </div>
                         <div className="flex justify-center gap-4 border-green-300 border-4">
-                            <button className="
-                                border-2
-                                border-black
-                                w-[125px]
-                                px-4
-                                py-2
-                                "
+                            <button 
+                                className="
+                                    border-2
+                                    border-black
+                                    bg-[#02549F]
+                                    text-gray-200
+                                    rounded
+                                    rounded-lg
+                                    w-[125px]
+                                    px-4
+                                    py-2
+                                    "
+                                onClick={buyNow}
                             >
                                 Add to cart
                             </button>
-                            <button className="
-                                border-2
-                                border-black
-                                w-[125px]
-                                px-4
-                                py-2
-                                "
-                            >
-                                Buy now
-                            </button>
+                            <Link to ='/cart'>
+                                <button
+                                    className="
+                                    border-2
+                                    border-black
+                                    w-[125px]
+                                    px-4
+                                    py-2
+                                    "
+                                    onClick={buyNow}
+                                >
+                                        Buy now
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
