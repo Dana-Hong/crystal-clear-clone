@@ -54,23 +54,23 @@ export default function Header(props) {
                     ml-auto
                 `
                 }>
-                <menu className="flex gap-6 ">
-                    <li className='text-xl md:text-2xl'>
+                <menu className="flex gap-6 py-2">
+                    <li className='text-[#02549F] border-2 text-xl md:text-2xl border-white hover:border-b-2 hover:border-b-[#02549F] hover:text-red-700 transition-[border-b_300ms_text-300ms]'>
                         <Link to='/products'>
                             Products
                         </Link>
                     </li>
-                    <li className='text-xl md:text-2xl'>
+                    <li className='text-[#02549F] border-2 text-xl md:text-2xl border-white hover:border-b-2 hover:border-b-[#02549F] hover:text-red-700 transition-[border-b_300ms_text-300ms]'>
                         <Link to='/service'>
                             Service
                         </Link>
                     </li>
-                    <li className='text-xl md:text-2xl'>
+                    <li className='text-[#02549F] border-2 text-xl md:text-2xl border-white hover:border-b-2 hover:border-b-[#02549F] hover:text-red-700 transition-[border-b_300ms_text-300ms]'>
                         <Link to='/about'>
                             About
                         </Link>
                     </li>
-                    <li className='text-xl md:text-2xl'>
+                    <li className='text-[#02549F] border-2 text-xl md:text-2xl border-white hover:border-b-2 hover:border-b-[#02549F] hover:text-red-700 transition-[border-b_300ms_text-300ms]'>
                         <Link to='/contact'>
                             Contact
                         </Link>
