@@ -7,17 +7,26 @@
   src: local('Assistant'), url(./Assistant-VariableFont_wght.ttf) format('truetype');
 }
 
-html, body{
+html {
+  height: 100vh;
+}
+
+html, body {
   overflow-x: hidden;
 }
 
 body {
+  height: 100%;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Assistant, apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+}
+
+#root {
+  height: 100%;
 }
 
 * {
@@ -52,7 +61,7 @@ code {
 .burger {
   display: block;
   position: fixed;
-  z-index: 5;
+  z-index: 1000;
 }
 
 .burger, .burger::before, .burger::after {
@@ -94,6 +103,7 @@ code {
     justify-content: center;
     align-items: center;
     background-color: rgb(250, 250, 211);
+    z-index: 100;
   
     transform: translateX(-100%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);

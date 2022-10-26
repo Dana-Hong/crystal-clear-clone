@@ -1,6 +1,8 @@
 import { useState, useContext } from "react";
-import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
+
+import PageTitle from "./PageTitle";
+import { CartContext } from "./CartContext";
 import ListItem from "./ListItem";
 
 export default function ProductDetailed(props) {
@@ -24,19 +26,23 @@ export default function ProductDetailed(props) {
     console.log(quantity);
     
     return (
-        <section className="border-black border-4 mb-auto">
+        <section className="mb-auto flex-grow">
             <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 justify-center">
-                <p className="md:hidden text-lg font-bold md:col-start-2">{productData.name}</p>
+                <PageTitle styles="md:hidden font-bold md:col-start-2" text={productData.name} />
                 <img 
                     src={productData.img}
                     alt=""
                     className="col-start-1"
                 />
-                <div className="flex flex-col justify-between border-red-500 border-2 max-w-[500px]">
-                    <p className="hidden md:block text-lg md:text-3xl font-bold py-6 mx-auto">{productData.name}</p>
-                    <div className="flex flex-col justify-center border-black border-2 flex-grow">
-                        <p className="py-2">Product Number: </p>
-                        <p className="py-2">Price: $ {productData.regPrice}</p>
+                <div className="flex flex-col justify-between max-w-[500px]">
+                    <PageTitle styles="hidden md:block text-lg md:text-2xl lg:text-4xl font-bold py-6 mx-auto" 
+                    text={productData.name}
+                    />
+                    <div className="flex flex-col justify-center flex-grow">
+                        <p className="py-6">Product Number: </p>
+                        <p className="py-6 text-4xl font-semi-bold tracking-wider">
+                            ${productData.regPrice}
+                        </p>
                         <div className="flex justify-center mt-auto">
                             <label
                                 htmlFor="productQuantity"
@@ -59,15 +65,14 @@ export default function ProductDetailed(props) {
                                 className="
                                 border-2
                                 border-black
-                                w-[75px]
+                                w-[50px]
                                 "
                             />
                         </div>
-                        <div className="flex justify-center gap-4 border-green-300 border-4">
+                        <div className="flex justify-center gap-4 py-4">
                             <button 
                                 className="
-                                    border-2
-                                    border-black
+                                    
                                     bg-[#02549F]
                                     text-gray-200
                                     rounded
@@ -75,6 +80,9 @@ export default function ProductDetailed(props) {
                                     w-[125px]
                                     px-4
                                     py-2
+                                    hover:font-bold
+                                    transition-[font_300ms]
+                                    ease-in-out
                                     "
                                 onClick={buyNow}
                             >
@@ -83,11 +91,16 @@ export default function ProductDetailed(props) {
                             <Link to ='/cart'>
                                 <button
                                     className="
-                                    border-2
-                                    border-black
+                                    bg-[#007BEE]
+                                    text-gray-200
+                                    rounded
+                                    rounded-lg
                                     w-[125px]
                                     px-4
                                     py-2
+                                    hover:font-bold
+                                    transition-[font_300ms]
+                                    ease-in-out
                                     "
                                     onClick={buyNow}
                                 >
