@@ -1,10 +1,10 @@
-import crystalClassic from './imgs/crystal-classic.JPG';
-import crystalComfort from './imgs/crystal-comfort.JPG';
-import crystalMaxx from './imgs/crystal-maxx.JPG';
-import crystalPerform from './imgs/crystal-perform.JPG';
-import crystalPro from './imgs/crystal-pro.JPG';
-import crystalUltra from './imgs/crystal-ultra.JPG';
-import crystalVision from './imgs/crystal-vision.JPG';
+import crystalClassic from './imgs/crystal-classic-removebg.png';
+import crystalComfort from './imgs/crystal-comfort-removebg.png';
+import crystalMaxx from './imgs/crystal-maxx-removebg.png';
+import crystalPerform from './imgs/crystal-perform-removebg.png';
+import crystalPro from './imgs/crystal-pro-removebg.png';
+import crystalUltra from './imgs/crystal-ultra-removebg.png';
+import crystalVision from './imgs/crystal-vision-removebg.png';
 
 const waterSoftenerData = {
     product: 'Water Softeners',

@@ -7,7 +7,7 @@ export default function ListItem(props) {
 
     return (
         <li className={props.containerStyles}>
-            <p className={`${props.styles} ${props.titleStyles}`}>{props.title}</p>
+            <p className={`${props.titleStyles}`}>{props.title}</p>
             {bodyElements}
         </li>
     )

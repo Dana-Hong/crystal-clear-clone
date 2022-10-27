@@ -1,19 +1,27 @@
 import { Link } from "react-router-dom";
 
 export default function ProductWidget(props) {
-    console.log(props.path);
     return (
         <div className={
             `
-            relative
-            h-450px
-            hover:brightness-50
-            transition-[brightness_300ms_text_300ms]
+            flex
+            flex-col
+            items-center
+            hover:scale-105
+            transition-[transform_300ms]
+            border-2
+            rounded
+            rounded-2xl
+            bg-blue-100
             `}>
-            <p className="w-full text-center absolute top-[4px] z-10 hover:brightness-150">{props.name}</p>
+            <p className="text-center text-2xl pt-6">
+                <Link to={props.path}>
+                    {props.name}
+                </Link>
+            </p>
             <Link to={props.path}>
                 <img 
-                    className="h-full w-full max-w-full"
+                    className="h-5/6 w-full max-w-full rounded rounded-xl my-4 object-cover"
                     src={props.img}
                     alt=""
                 />

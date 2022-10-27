@@ -10,7 +10,7 @@ import since1980Icon from './imgs/1980-icon.JPG';
 
 export default function Home(props) {
     return (
-        <main className='bg-yellow-50'>
+        <main className='bg-yellow-50 shadow-[inset_0_2px_20px_0_rgba(0,0,0,.3)]'>
             <section className='max-w-screen-2xl mx-auto min-h-[80vh] flex 2xs:flex-col lg:flex-row justify-around items-center lg:pl-10'>
                 <div className='flex flex-col flex-1 items-center px-5 text-center tracking-widest xl:max-w-[900px] 2xs:order-first lg:order-last'>
                     <h1 className='2xs:text-4xl sm:text-6xl lg:text-7xl p-4 flex flex-col gap-4'>

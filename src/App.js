@@ -77,7 +77,7 @@ function App() {
   }, [cart])
 
   return (
-      <div className='app h-full w-full'>
+      <div className='h-full w-full flex flex-col'>
           <Header cartEmpty={cartEmpty} /> 
               <Routes>
                   <Route 

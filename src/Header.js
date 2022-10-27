@@ -22,6 +22,7 @@ export default function Header(props) {
             {`
                 App-header
                 flex
+                w-full
                 max-w-screen-2xl
                 mx-auto
                 p-4
