@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 export default function ListItem(props) {
 
+
     const bodyElements = props.body.map(bodyItem => {
         return <p className={props.styles} key={nanoid()}>{bodyItem}</p>
     });
@@ -8,7 +9,7 @@ export default function ListItem(props) {
     return (
         <li className={props.containerStyles}>
             <p className={`${props.titleStyles}`}>{props.title}</p>
-            {bodyElements}
+            {props.body || bodyElements}
         </li>
     )
 }

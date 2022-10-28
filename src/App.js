@@ -1,5 +1,6 @@
 import { useEffect, useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 
 import Header from './Header';
 import Home from './Home';
@@ -7,6 +8,7 @@ import Cart from './Cart';
 import Products from './Products';
 import ProductCategory from './ProductCategory';
 import ProductDetailed from './ProductDetailed';
+import Service from './Service';
 import Footer from './Footer';
 
 import { CartContext } from './CartContext';
@@ -71,10 +73,36 @@ function App() {
         return prevCartSubtotal + (currentCartItem.price * currentCartItem.quantity);
       }, prevCartTotal);
     });
-    
-    console.log('total:', cartQuantity);
 
   }, [cart])
+
+  const waterSoftenerModels = waterSoftenerData.models.map((model, index) => {
+    return (
+      <Route
+        key={nanoid()} 
+        path={model.path}
+        element={
+          <CartContext.Provider value={{addItem, cart}}>
+            <ProductDetailed productData={waterSoftenerData.models[index]} />
+          </CartContext.Provider>
+        }
+        />
+    )
+  });
+
+  const reverseOsmosisModels = reverseOsmosisData.models.map((model, index) => {
+    return (
+      <Route
+        key={nanoid()}
+        path={model.path}
+        element={
+          <CartContext.Provider value={{addItem, cart}}>
+            <ProductDetailed productData={reverseOsmosisData.models[index]} />
+          </CartContext.Provider>
+        }
+        />
+    )
+  });
 
   return (
       <div className='h-full w-full flex flex-col'>
@@ -95,55 +123,11 @@ function App() {
                   <Route
                     path='/products/reverse-osmosis'
                     element={<ProductCategory productData={reverseOsmosisData}/>} />
-                <Route
-                  path='/products/water-softeners/crystal-comfort'
-                  element={
-                    <CartContext.Provider value={{addItem, cart}}>
-                        <ProductDetailed productData={waterSoftenerData.models[0]}/>
-                    </CartContext.Provider>
-                  } />
-                <Route
-                  path='/products/water-softeners/crystal-vision'
-                  element={
-                    <CartContext.Provider value={{addItem, cart}}>
-                        <ProductDetailed productData={waterSoftenerData.models[1]}/>
-                    </CartContext.Provider>
-                    } />
-                <Route
-                  path='/products/water-softeners/crystal-perform'
-                  element={
-                    <CartContext.Provider value={{addItem, cart}}>
-                    <ProductDetailed productData={waterSoftenerData.models[2]}/>
-                    </CartContext.Provider>
-                  } />
-                <Route
-                  path='/products/water-softeners/crystal-ultra'
-                  element={
-                    <CartContext.Provider value={{addItem, cart}}>
-                      <ProductDetailed productData={waterSoftenerData.models[3]}/>
-                    </CartContext.Provider>
-                  } />
-                <Route
-                  path='/products/water-softeners/crystal-classic'
-                  element={
-                    <CartContext.Provider value={{addItem, cart}}>
-                      <ProductDetailed productData={waterSoftenerData.models[4]}/>
-                    </CartContext.Provider>
-                  } />
-                <Route
-                  path='/products/water-softeners/crystal-pro'
-                  element={
-                    <CartContext.Provider value={{addItem, cart}}>
-                      <ProductDetailed productData={waterSoftenerData.models[5]}/>
-                    </CartContext.Provider>
-                  } />
-                <Route
-                  path='/products/water-softeners/crystal-maxx'
-                  element={
-                    <CartContext.Provider value={{addItem, cart}}>
-                      <ProductDetailed productData={waterSoftenerData.models[6]}/>
-                    </CartContext.Provider>
-                  } />
+                  {waterSoftenerModels}
+                  {reverseOsmosisModels}
+                  <Route 
+                    path='/service'
+                    element={<Service />}/>
   
               </Routes>
           <Footer />

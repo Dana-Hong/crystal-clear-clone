@@ -8,6 +8,7 @@ import crystalVision from './imgs/crystal-vision-removebg.png';
 
 const waterSoftenerData = {
     product: 'Water Softeners',
+    benefitsIntro: 'In cities near hard water, having a water softener in your home is a must. The benefits include:',
     benefits: [
         {
             title: 'Cleaner, Brighter Laundry',
