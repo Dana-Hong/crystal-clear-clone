@@ -9,6 +9,7 @@ import Products from './Products';
 import ProductCategory from './ProductCategory';
 import ProductDetailed from './ProductDetailed';
 import Service from './Service';
+import Contact from './Contact';
 import Footer from './Footer';
 
 import { CartContext } from './CartContext';
@@ -128,6 +129,9 @@ function App() {
                   <Route 
                     path='/service'
                     element={<Service />}/>
+                  <Route 
+                    path='/contact'
+                    element={<Contact />}/>
   
               </Routes>
           <Footer />
