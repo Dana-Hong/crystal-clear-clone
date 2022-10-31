@@ -46,6 +46,7 @@ const waterSoftenerData = {
     models: [
         {   
             name: 'Crystal Comfort Water Softener',
+            category: 'waterSoftener',
             regPrice: 1295,
             financing: '$19 /mo OAC',
             img: crystalComfort,
@@ -59,6 +60,7 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal Vision Water Softener',
+            category: 'waterSoftener',
             regPrice: 1595,
             financing: '$23 /mo OAC',
             img: crystalVision,
@@ -72,6 +74,7 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal Perform Water Softener',
+            category: 'waterSoftener',
             regPrice: 1895,
             financing: '$23 /mo OAC',
             img: crystalPerform,
@@ -85,6 +88,7 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal Ultra High-Efficiency Conditioner',
+            category: 'waterSoftener',
             regPrice: 2395,
             financing: '$23 /mo OAC',
             img: crystalUltra,
@@ -98,6 +102,7 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal CLASSIC Twin Softener',
+            category: 'waterSoftener',
             regPrice: 2895,
             financing: '$23 /mo OAC',
             img: crystalClassic,
@@ -111,6 +116,7 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal PRO Water Softener',
+            category: 'waterSoftener',
             regPrice: 3295,
             financing: '$23 /mo OAC',
             img: crystalPro,
@@ -124,6 +130,7 @@ const waterSoftenerData = {
         },
         {
             name: 'Crystal MAXX Water Softener',
+            category: 'waterSoftener',
             regPrice: 3595,
             financing: '$23 /mo OAC',
             img: crystalMaxx,

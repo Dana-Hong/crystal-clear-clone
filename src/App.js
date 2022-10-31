@@ -23,7 +23,7 @@ function App() {
   const [cartTotal, setCartTotal] = useState(0);
   const [cartEmpty, setCartEmpty] = useState(true);
   
-  function addItem(productName, quantity) {
+  function addItem(productName, quantity, productList) {
     const itemAlreadyInCart = cart.some(item => item.name === productName);
     if (itemAlreadyInCart) {
       setCart(prevCart => {
@@ -39,7 +39,8 @@ function App() {
         });
       });
     } else {
-      const [ addedItem ] = waterSoftenerData.models.filter(model => model.name === productName);
+      console.log('productList from addItem function', productList)
+      const [ addedItem ] = productList.filter(model => model.name === productName);
       const newItem = {
         name: addedItem.name,
         price: addedItem.regPrice,
@@ -48,12 +49,7 @@ function App() {
         quantity: quantity
       }
       
-      setCart(prevCart => {
-        // console.log('test', typeof(quantity));
-        // const [ newProduct ] = waterSoftenerData.models.filter(model => model.name === productName);
-        // const [ test ] = waterSoftenerData.models.filter(model => model.name === productName);
-        // const newProductArray = Array(quantity).fill(newProduct);
-        
+      setCart(prevCart => {        
         return [...prevCart, newItem];
       });
     }
@@ -72,7 +68,7 @@ function App() {
     setCartTotal(prevCartTotal => {
       return cart.reduce((prevCartSubtotal, currentCartItem) => {
         return prevCartSubtotal + (currentCartItem.price * currentCartItem.quantity);
-      }, prevCartTotal);
+      }, 0);
     });
 
   }, [cart])
@@ -84,7 +80,7 @@ function App() {
         path={model.path}
         element={
           <CartContext.Provider value={{addItem, cart}}>
-            <ProductDetailed productData={waterSoftenerData.models[index]} />
+            <ProductDetailed productData={waterSoftenerData.models[index]} productList={waterSoftenerData.models} />
           </CartContext.Provider>
         }
         />
@@ -98,7 +94,7 @@ function App() {
         path={model.path}
         element={
           <CartContext.Provider value={{addItem, cart}}>
-            <ProductDetailed productData={reverseOsmosisData.models[index]} />
+            <ProductDetailed productData={reverseOsmosisData.models[index]} productList={reverseOsmosisData.models} />
           </CartContext.Provider>
         }
         />

@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 import PageTitle from "./PageTitle";
 import { CartContext } from "./CartContext";
@@ -7,11 +8,15 @@ import ListItem from "./ListItem";
 
 export default function ProductDetailed(props) {
     const [quantity, setQuantity] = useState(1);
-    const { productData } = props;
+    const { productData, productList } = props;
     const cartData = useContext(CartContext);
-    console.log(cartData);
+    console.log('productdataname:', productData.name);
 
-    const listElements = Object.values(productData.features).map(feature => <ListItem title={''} body={[feature]} styles={'pb-2 text-lg'} containerStyles={'list-disc'} />)
+    const listElements = Object.values(productData.features).map(feature => {
+        return (
+            <ListItem key={nanoid()} title={''} body={[feature]} styles={'pb-2 text-lg'} containerStyles={'list-disc'} />
+        )
+    });
 
     function handleChange(event) {
         setQuantity(event.target.value);
@@ -19,11 +24,12 @@ export default function ProductDetailed(props) {
 
     function buyNow() {
         if (!cartData.cart.some(item => item.name === productData.name) || quantity > 1 ) {
-            cartData.addItem(productData.name, Number(quantity));
+            cartData.addItem(productData.name, Number(quantity), productList);
+            console.log(productData)
         }
     }
 
-    console.log(quantity);
+    console.log('productList:', productList);
     
     return (
         <section className="mb-auto flex-grow bg-yellow-50 shadow-[inset_0_2px_20px_0_rgba(0,0,0,.3)] flex items-center">
@@ -117,90 +123,6 @@ export default function ProductDetailed(props) {
                     </div>
                 </div>
             </div>
-            {/* <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 justify-center h-full px-4 border-4">
-                <PageTitle styles="md:hidden font-bold md:col-start-2" text={productData.name} />
-                <img 
-                    src={productData.img}
-                    alt=""
-                    className="col-start-1 justify-self-center self-center border-2"
-                />
-                <div className="flex flex-col justify-between max-w-[500px] mx-auto">
-                    <PageTitle styles="hidden md:block text-lg md:text-2xl lg:text-4xl font-bold py-6 mx-auto" 
-                    text={productData.name}
-                    />
-                    <div className="flex flex-col justify-center flex-grow border-2">
-                        <p className="py-6">Product Number: </p>
-                        <p className="py-6 text-4xl font-semi-bold tracking-wider">
-                            ${productData.regPrice}
-                        </p>
-                        <div className="flex justify-center mt-auto border-2">
-                            <label
-                                htmlFor="productQuantity"
-                                className="
-                                px-4
-                                py-2
-                                w-[125px]
-                                text-center
-                                "
-                                >
-                                    Quantity:
-                            </label>
-                            <input 
-                                type='number'
-                                name='productQuantity'
-                                id='productQuantity'
-                                placeholder="1"
-                                min={1}
-                                onChange={handleChange}
-                                className="
-                                border-2
-                                border-black
-                                w-[50px]
-                                "
-                            />
-                        </div>
-                        <div className="flex justify-center gap-4 py-4">
-                            <button 
-                                className="
-                                    
-                                    bg-[#02549F]
-                                    text-gray-200
-                                    rounded
-                                    rounded-lg
-                                    w-[125px]
-                                    px-4
-                                    py-2
-                                    hover:font-bold
-                                    transition-[font_300ms]
-                                    ease-in-out
-                                    "
-                                onClick={buyNow}
-                            >
-                                Add to cart
-                            </button>
-                            <Link to ='/cart'>
-                                <button
-                                    className="
-                                    bg-[#007BEE]
-                                    text-gray-200
-                                    rounded
-                                    rounded-lg
-                                    w-[125px]
-                                    px-4
-                                    py-2
-                                    hover:font-bold
-                                    transition-[font_300ms]
-                                    ease-in-out
-                                    "
-                                    onClick={buyNow}
-                                >
-                                        Buy now
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </section>
     )
 }

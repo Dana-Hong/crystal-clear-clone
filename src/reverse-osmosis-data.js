@@ -43,6 +43,7 @@ const reverseOsmosisData = {
     models: [
         {   
             name: 'Crystal Economy Reverse Osmosis System',
+            category: 'reverseOsmosis',
             regPrice: 795,
             img: crystalEconomy,
             path: '/products/reverse-osmosis/crystal-economy',
@@ -54,6 +55,7 @@ const reverseOsmosisData = {
         },
         {
             name: 'GRO Reverse Osmosis System',
+            category: 'reverseOsmosis',
             regPrice: 1095,
             img: crystalGro,
             path: '/products/reverse-osmosis/gro',
@@ -66,6 +68,7 @@ const reverseOsmosisData = {
         },
         {
             name: 'Crystal Platinum Reverse Osmosis System',
+            category: 'reverseOsmosis',
             regPrice: 1295,
             img: crystalPlatinum,
             path: '/products/reverse-osmosis/crystal-platinum',
@@ -79,6 +82,7 @@ const reverseOsmosisData = {
         },
         {
             name: 'Crystal Optimum Reverse Osmosis System',
+            category: 'reverseOsmosis',
             regPrice: 1695,
             img: crystalOptimum,
             path: '/products/reverse-osmosis/crystal-optimum',
