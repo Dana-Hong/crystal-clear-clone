@@ -26,19 +26,17 @@ export default function ProductDetailed(props) {
             cartData.addItem(productData.name, Number(quantity), productList);
         }
     }
-
-    console.log('productList:', productList);
     
     return (
         <section className="mb-auto flex-grow bg-yellow-50 shadow-[inset_0_2px_20px_0_rgba(0,0,0,.3)] flex items-center">
-            <div className="max-w-screen-xl mx-auto px-4 flex flex-col items-center lg:flex-row">
+            <div className="max-w-screen-xl mx-auto px-4 flex flex-col items-center lg:flex-row 2xs:w-3/4">
                 <PageTitle styles="lg:hidden font-bold text-center" text={productData.name} />
                 <img 
                     src={productData.img}
                     alt=""
                     className="justify-self-center self-center"
                 />
-                <div className="flex flex-col w-[490px] h-2/3 mx-auto py-">
+                <div className="flex flex-col 2xs:w-full md:w-[490px] h-2/3 mx-auto">
                     <PageTitle styles="2xs:hidden lg:block lg:text-4xl font-bold text-center" text={productData.name} />
                     <ul className="pl-4">
                         <p className="text-xl font-semibold pb-4">Features:</p>
