@@ -19,7 +19,7 @@ export default function Cart(props) {
     })
 
     return (
-        <section className="bg-yellow-50 flex-grow">
+        <section className="bg-yellow-50 flex-grow shadow-[inset_0_2px_20px_0_rgba(0,0,0,.3)]">
             <div className="max-w-screen-xl mx-auto px-6">
                 <PageTitle text={'Shopping Cart'} styles={'text-center'} />
                 <p className="text-xl text-center py-4 md:text-2xl">

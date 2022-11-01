@@ -16,6 +16,7 @@ import { CartContext } from './CartContext';
 
 import { waterSoftenerData } from './water-softener-data';
 import { reverseOsmosisData } from './reverse-osmosis-data';
+import { distillerData } from './distiller-data';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -101,6 +102,20 @@ function App() {
     )
   });
 
+  const distillerModels = distillerData.models.map((model, index) => {
+    return (
+      <Route 
+        key={nanoid()}
+        path={model.path}
+        element={
+          <CartContext.Provider value={{addItem, cart}}>
+            <ProductDetailed productData={distillerData.models[index]} productList={distillerData.models} />
+          </CartContext.Provider>
+        }
+      />
+    );
+  });
+
   return (
       <div className='h-full w-full flex flex-col'>
           <Header cartEmpty={cartEmpty} /> 
@@ -120,8 +135,12 @@ function App() {
                   <Route
                     path='/products/reverse-osmosis'
                     element={<ProductCategory productData={reverseOsmosisData}/>} />
+                  <Route 
+                    path='/products/distillers'
+                    element={<ProductCategory productData={distillerData}/>} />
                   {waterSoftenerModels}
                   {reverseOsmosisModels}
+                  {distillerModels}
                   <Route 
                     path='/service'
                     element={<Service />}/>
