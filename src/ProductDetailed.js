@@ -10,7 +10,6 @@ export default function ProductDetailed(props) {
     const [quantity, setQuantity] = useState(1);
     const { productData, productList } = props;
     const cartData = useContext(CartContext);
-    console.log('productdataname:', productData.name);
 
     const listElements = Object.values(productData.features).map(feature => {
         return (
@@ -25,7 +24,6 @@ export default function ProductDetailed(props) {
     function buyNow() {
         if (!cartData.cart.some(item => item.name === productData.name) || quantity > 1 ) {
             cartData.addItem(productData.name, Number(quantity), productList);
-            console.log(productData)
         }
     }
 

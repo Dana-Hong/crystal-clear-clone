@@ -40,7 +40,6 @@ function App() {
         });
       });
     } else {
-      console.log('productList from addItem function', productList)
       const [ addedItem ] = productList.filter(model => model.name === productName);
       const newItem = {
         name: addedItem.name,
@@ -57,6 +56,20 @@ function App() {
     
   }
 
+  function removeItem(itemToRemove, quantity) {
+    setCart(prevCart => {
+      return prevCart.filter(product => product.name !== itemToRemove.name);
+    });
+  }
+
+  function updateCart(newQuantity, item) {
+    setCart(prevCart => {
+      return prevCart.map(product => {
+        return product.name === item.name ? {...product, quantity: Number(newQuantity) } : product
+      });
+    });
+  }
+
   useEffect(() => {
     if (cart.length !== 0) {
       setCartEmpty(false);
@@ -71,6 +84,8 @@ function App() {
         return prevCartSubtotal + (currentCartItem.price * currentCartItem.quantity);
       }, 0);
     });
+
+    console.log(cart);
 
   }, [cart])
 
@@ -124,8 +139,15 @@ function App() {
                     path='/' 
                     element={<Home/>} />
                   <Route 
-                    path='/cart' 
-                    element={<Cart cart={cart} cartQuantity={cartQuantity} cartTotal={cartTotal} />} />
+                    path='/cart'
+                    element={
+                      <Cart 
+                        cart={cart}
+                        cartQuantity={cartQuantity} 
+                        cartTotal={cartTotal} 
+                        removeItem={removeItem}
+                        updateCart={updateCart}
+                        />} />
                   <Route
                     path='/products'
                     element={<Products />} />

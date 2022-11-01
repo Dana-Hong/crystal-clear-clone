@@ -7,7 +7,6 @@ export default function Header(props) {
 
     function toggleNav() {
         setNavOpen(prevNavOpen => !prevNavOpen);
-        console.log(navOpen);
     }
 
     function cartIcon() {
